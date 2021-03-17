@@ -1,20 +1,24 @@
 program catmol2
 
   use mol2_class
-  use cmdline_arguments
+  use cmdline_arguments, only: get_options, bad_options, have_args, option_exists, &
+      has_value, get_value, assignment(=), next_arg, num_args
   use iso_varying_string
   use file_functions, only: stderr
   use string_functions, only: join
 
   implicit none
 
-  !! $Log: $
+  !! $Log: catmol2.f90,v $
+  !! Revision 1.1  2006/05/18 01:30:26  aidan
+  !! Initial revision
+  !!
 
   ! Revision control software updates this character parameter.
   ! The 'ident' command can extract this version string from an
   ! object file or executable, which means one can identify which
   ! version of the module was used to compile it.
-  character(len=*), parameter :: version = "$Id:$"
+  character(len=*), parameter :: version = "$Id: catmol2.f90,v 1.1 2006/05/18 01:30:26 aidan Exp aidan $"
 
   type (mol2_object)              :: all, input
 
